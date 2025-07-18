@@ -17,6 +17,11 @@ public class HelloWorldController {
         return customGreeting;
     }
 
+    @GetMapping("/greet/{name}")
+    public String greetUser(@PathVariable String name) {
+        return "Greetings ," + name + "!";
+    }
+
     @GetMapping("/greeting")
     public String greetWithParam(
             @RequestParam(value = "name", required = false, defaultValue = "World") String name) {
